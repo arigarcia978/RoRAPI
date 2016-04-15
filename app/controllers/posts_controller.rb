@@ -5,12 +5,6 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    game_score = client.new "GameScore"
-    game_score["score"] = 1337
-    game_score["playerName"] = "Sean Plott"
-    game_score["cheatMode"] = false
-    result = game_score.save
-    puts result
     render json: @posts
   end
 
