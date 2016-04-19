@@ -22,6 +22,7 @@ module BackendAPI
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.assets.initialize_on_precompile = false
+    config.change_headers_on_each_request = false
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
